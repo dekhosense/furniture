@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tamas Living - Modern Home Furniture</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brandDark: '#072023',
+            brandDarkElevated: '#0a2a2e',
+            brandTeal: '#0f6e77',
+            brandTealLight: '#148c98',
+            brandWhatsApp: '#25D366',
+            brandWhatsAppHover: '#20ba59',
+            brandMuted: '#94a3b8',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #051618;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .spin-ring {
+      border: 1.5px solid rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      transform: rotateX(74deg);
+    }
+
+    /* Infinite Horizontal Continuous Scroll Animation */
+    @keyframes infiniteScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: infiniteScroll 22s linear infinite;
+    }
+    
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes floatChair {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .floating-anim {
+      animation: floatChair 3.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start antialiased selection:bg-brandTeal selection:text-white">
+
+  <!-- Main Mobile App Shell -->
+  <main class="w-full max-w-[480px] h-screen min-h-[640px] relative shadow-2xl overflow-hidden bg-brandDark">
+
+    <!-- ========================================================= -->
+    <!-- SCREEN 1: LANDING / HERO ONBOARDING                      -->
+    <!-- ========================================================= -->
+    <section 
+      id="heroScreen" 
+      class="absolute inset-0 w-full h-full bg-brandDark text-white px-5 pt-8 pb-8 flex flex-col justify-between overflow-y-auto no-scrollbar transition-transform duration-500 ease-in-out z-20">
+      
+      <!-- Ambient Glows -->
+      <div class="absolute -top-12 -right-12 w-64 h-64 bg-teal-500/15 rounded-full filter blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-10 left-0 w-52 h-52 bg-teal-600/10 rounded-full filter blur-2xl pointer-events-none"></div>
+
+      <!-- Header Branding -->
+      <div class="flex items-center justify-between z-10">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-teal-300 font-semibold">Tamas Luxury</span>
+          <p class="text-[11px] text-teal-100/60 font-medium">Original Collections</p>
+        </div>
+        
+        <a 
+          href="https://wa.me/916223295042?text=Namaste!%20Mujhe%20Tamas%20Living%20furniture%20catalog%20ke%20bare%20me%20jankari%20chahiye." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 bg-brandWhatsApp hover:bg-brandWhatsAppHover text-white px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-md shadow-brandWhatsApp/20 active:scale-95 transition">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Headline -->
+      <div class="text-left z-10 my-2">
+        <h1 class="font-display text-3xl font-bold tracking-tight text-white leading-tight">
+          Explore top <br><span class="text-teal-300">brand Furnitures</span>
+        </h1>
+        <p class="text-xs text-teal-100/70 mt-1 font-normal leading-relaxed">
+          Modern living room sets, ergonomic chairs & luxury handcrafted wood finishes.
+        </p>
+      </div>
+
+      <!-- Continuous 8 Images Auto Right-to-Left Infinite Carousel -->
+      <div class="relative w-full my-auto py-4 overflow-hidden z-10">
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-64 h-8 bg-teal-500/20 rounded-full filter blur-xl pointer-events-none"></div>
+
+        <div class="animate-marquee flex items-center gap-4">
+          <!-- 8 Furniture Items -->
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczNkMMuoS1KjzbsjTTHCCx9gGZAtloFweyj3B6Gw3e8KluCmw2QYV4orA_622P5gJmbAM06UmMSf2yCuXD7aIYuFzp_VNCHxZHIs5VHZIxnAllnUB_Uu45WNmcbpqAOJVn9QNi-CiOqqX7gh5wGGUm0N=w414-h602-s-no-gm?authuser=0?auto=format&fit=crop&w=700&q=80" alt="Nordic Ivory Chair" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Ivory+Chair'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Nordic Ivory Chair</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80" alt="Aalto Lounge Chair" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Aalto+Chair'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Aalto Armchair</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80" alt="Balcony Lounger" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Balcony+Loung'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Balcony Lounger</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80" alt="Boogly Modern Seat" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Boogly+Seat'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Boogly Classic</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=700&q=80" alt="Nordic Solid Table" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Nordic+Table'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Nordic Wood Desk</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80" alt="Velvet Emerald Sofa" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Emerald+Sofa'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Velvet Emerald Sofa</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="Royal Comfort Bed" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Royal+Bed'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Royal King Bed</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=700&q=80" alt="Minimalist Teak Chair" class="h-36 object-contain drop-shadow-xl" onerror="this.src='https://placehold.co/400x400/072023/ffffff?text=Teak+Chair'">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Minimalist Teak Chair</span>
+          </div>
+
+          <!-- Seamless loop copies -->
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczNkMMuoS1KjzbsjTTHCCx9gGZAtloFweyj3B6Gw3e8KluCmw2QYV4orA_622P5gJmbAM06UmMSf2yCuXD7aIYuFzp_VNCHxZHIs5VHZIxnAllnUB_Uu45WNmcbpqAOJVn9QNi-CiOqqX7gh5wGGUm0N=w414-h602-s-no-gm?authuser=0?auto=format&fit=crop&w=700&q=80" alt="Nordic Ivory Chair" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Nordic Ivory Chair</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80" alt="Aalto Lounge Chair" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Aalto Armchair</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80" alt="Balcony Lounger" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Balcony Lounger</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80" alt="Boogly Modern Seat" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Boogly Classic</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=700&q=80" alt="Nordic Solid Table" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Nordic Wood Desk</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80" alt="Velvet Emerald Sofa" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Velvet Emerald Sofa</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80" alt="Royal Comfort Bed" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Royal King Bed</span>
+          </div>
+
+          <div class="w-48 h-56 bg-white/5 border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center shrink-0 backdrop-blur-sm shadow-xl floating-anim">
+            <img src="https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=700&q=80" alt="Minimalist Teak Chair" class="h-36 object-contain drop-shadow-xl">
+            <span class="text-xs font-semibold text-teal-200 mt-2">Minimalist Teak Chair</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Action Prompt -->
+      <div class="z-10 mt-auto pt-4 border-t border-white/10 flex items-center justify-between">
+        <div class="max-w-[220px]">
+          <p class="text-base font-semibold text-neutral-100 font-display leading-snug">
+            Find the best home furniture for your room.
+          </p>
+        </div>
+        <button 
+          onclick="goToCatalog()" 
+          class="w-12 h-12 rounded-full bg-brandTeal hover:bg-brandTealLight text-white flex items-center justify-center shadow-lg active:scale-95 transition group"
+          aria-label="Explore Catalog">
+          <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-0.5 transition-transform"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SCREEN 2: CATALOG & PRODUCTS                             -->
+    <!-- ========================================================= -->
+    <section 
+      id="catalogScreen" 
+      class="absolute inset-0 w-full h-full bg-[#f5f7f8] px-4 pt-4 pb-10 flex flex-col gap-3.5 overflow-y-auto no-scrollbar transition-transform duration-500 ease-in-out translate-x-full z-10">
+      
+      <!-- NEW: TOP BRANDING HEADER FOR CATALOG PAGE -->
+      <div class="flex items-center justify-between pt-1 pb-1 border-b border-slate-200/80 shrink-0">
+        <div class="flex items-center gap-2.5">
+          <!-- Back Button to Landing Page -->
+          <button 
+            onclick="goToHero()" 
+            class="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-xs active:scale-90 transition shrink-0 hover:bg-slate-50"
+            aria-label="Back to Home">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          </button>
+          <div>
+            <h1 class="text-xs font-bold uppercase tracking-wider text-slate-900 font-display leading-none">
+              Tamas Luxury
+            </h1>
+            <p class="text-[10px] text-brandTeal font-semibold leading-tight mt-0.5">
+              Original Collections
+            </p>
+          </div>
+        </div>
+
+        <a 
+          href="https://wa.me/916223295042?text=Namaste!%20Mujhe%20Tamas%20Living%20furniture%20catalog%20ke%20bare%20me%20jankari%20chahiye." 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1 bg-brandWhatsApp/10 text-brandWhatsApp border border-brandWhatsApp/25 hover:bg-brandWhatsApp hover:text-white px-2.5 py-1.5 rounded-full text-[11px] font-semibold transition active:scale-95">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5 fill-current"></i>
+          <span>Support</span>
+        </a>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="relative flex items-center w-full shrink-0">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none"></i>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search Furnitures (e.g. Chair, Table)" 
+          oninput="handleSearch(this.value)"
+          class="w-full bg-white border border-slate-200/90 rounded-2xl py-2.5 pl-10 pr-4 text-xs font-normal focus:outline-none focus:ring-2 focus:ring-brandTeal/30 text-slate-800 placeholder-slate-400 shadow-xs"
+        />
+      </div>
+
+      <!-- Featured Banner with 8 Auto-Sliding Images + Text -->
+      <div class="relative w-full rounded-2xl overflow-hidden bg-slate-900 shadow-md border border-slate-200/40 h-44 shrink-0">
+        <div id="catalogBannerSlider" class="w-full h-full relative">
+          <!-- Slide items injected via JS -->
+        </div>
+
+        <!-- Banner Indicator Dots -->
+        <div id="bannerDots" class="absolute bottom-2.5 right-4 z-20 flex items-center gap-1.5 bg-black/40 px-2 py-1 rounded-full backdrop-blur-xs"></div>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="shrink-0">
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+          <button onclick="filterCategory('All', this)" class="category-pill active flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-brandDark text-white text-xs font-medium shrink-0 transition">
+            <i data-lucide="grid" class="w-3.5 h-3.5"></i>
+            <span>All Items</span>
+          </button>
+          <button onclick="filterCategory('Tables', this)" class="category-pill flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-medium shrink-0 hover:bg-slate-50 transition">
+            <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+            <span>Tables</span>
+          </button>
+          <button onclick="filterCategory('Beds', this)" class="category-pill flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-medium shrink-0 hover:bg-slate-50 transition">
+            <i data-lucide="bed" class="w-3.5 h-3.5"></i>
+            <span>Beds</span>
+          </button>
+          <button onclick="filterCategory('Chair', this)" class="category-pill flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-medium shrink-0 hover:bg-slate-50 transition">
+            <i data-lucide="armchair" class="w-3.5 h-3.5"></i>
+            <span>Chair</span>
+          </button>
+          <button onclick="filterCategory('Sofa', this)" class="category-pill flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-medium shrink-0 hover:bg-slate-50 transition">
+            <i data-lucide="sofa" class="w-3.5 h-3.5"></i>
+            <span>Sofa</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Recommended Section Header -->
+      <div class="flex items-center justify-between mt-1 shrink-0">
+        <h3 class="text-sm font-bold tracking-tight text-slate-900 font-display">Recommended for you</h3>
+        <button onclick="filterCategory('All', document.querySelector('.category-pill'))" class="text-xs font-semibold text-brandTeal hover:underline">
+          View All
+        </button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-2 gap-3 pb-8" id="productGrid">
+        
+        <!-- Product 1 -->
+        <article class="product-item bg-white rounded-2xl p-3 border border-slate-200/70 shadow-sm flex flex-col justify-between relative group" data-category="Chair" data-title="Aalto Armchair">
+          <button onclick="toggleWishlist(this, event)" class="wishlist-btn absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 border border-slate-100 flex items-center justify-center text-red-500 shadow-sm z-10 transition active:scale-90" aria-label="Save to Wishlist">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-red-500 stroke-red-500"></i>
+          </button>
+          
+          <div onclick="openDetailModal('Aalto Armchair', '₹940.00', 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80', 'Chair')" class="cursor-pointer">
+            <div class="h-28 w-full flex items-center justify-center overflow-hidden rounded-xl bg-slate-50 mb-2">
+              <img 
+                src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80" 
+                alt="Aalto Armchair" 
+                class="h-24 object-contain group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='https://placehold.co/300x300/f0f4f4/333333?text=Aalto+Armchair'"
+              >
+            </div>
+            <h4 class="text-xs font-semibold text-slate-800 line-clamp-1">Aalto Armchair</h4>
+          </div>
+
+          <div class="flex items-center justify-between mt-2 pt-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-900">₹94</span>
+            <button 
+              onclick="connectWhatsAppProduct('Aalto Armchair', '₹940')"
+              class="bg-brandWhatsApp hover:bg-brandWhatsAppHover active:scale-95 text-white text-[11px] font-medium px-2.5 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition">
+              <i data-lucide="message-circle" class="w-3 h-3 fill-current"></i>
+              <span>WhatsApp</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-item bg-white rounded-2xl p-3 border border-slate-200/70 shadow-sm flex flex-col justify-between relative group" data-category="Chair" data-title="Balcony Loung">
+          <button onclick="toggleWishlist(this, event)" class="wishlist-btn absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 border border-slate-100 flex items-center justify-center text-slate-300 shadow-sm z-10 transition active:scale-90" aria-label="Save to Wishlist">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          </button>
+          
+          <div onclick="openDetailModal('Balcony Loung', '₹720.00', 'https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80', 'Chair')" class="cursor-pointer">
+            <div class="h-28 w-full flex items-center justify-center overflow-hidden rounded-xl bg-slate-50 mb-2">
+              <img 
+                src="https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80" 
+                alt="Balcony Loung" 
+                class="h-24 object-contain group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='https://placehold.co/300x300/f0f4f4/333333?text=Balcony+Loung'"
+              >
+            </div>
+            <h4 class="text-xs font-semibold text-slate-800 line-clamp-1">Balcony Loung</h4>
+          </div>
+
+          <div class="flex items-center justify-between mt-2 pt-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-900">₹72</span>
+            <button 
+              onclick="connectWhatsAppProduct('Balcony Loung', '₹720')"
+              class="bg-brandWhatsApp hover:bg-brandWhatsAppHover active:scale-95 text-white text-[11px] font-medium px-2.5 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition">
+              <i data-lucide="message-circle" class="w-3 h-3 fill-current"></i>
+              <span>WhatsApp</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-item bg-white rounded-2xl p-3 border border-slate-200/70 shadow-sm flex flex-col justify-between relative group" data-category="Chair" data-title="Boogly Chair">
+          <button onclick="toggleWishlist(this, event)" class="wishlist-btn absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 border border-slate-100 flex items-center justify-center text-red-500 shadow-sm z-10 transition active:scale-90" aria-label="Save to Wishlist">
+            <i data-lucide="heart" class="w-3.5 h-3.5 fill-red-500 stroke-red-500"></i>
+          </button>
+          
+          <div onclick="openDetailModal('Boogly Chair', '₹1500.00', 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80', 'Chair')" class="cursor-pointer">
+            <div class="h-28 w-full flex items-center justify-center overflow-hidden rounded-xl bg-slate-50 mb-2">
+              <img 
+                src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80" 
+                alt="Boogly Chair" 
+                class="h-24 object-contain group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='https://placehold.co/300x300/f0f4f4/333333?text=Boogly+Chair'"
+              >
+            </div>
+            <h4 class="text-xs font-semibold text-slate-800 line-clamp-1">Boogly Chair</h4>
+          </div>
+
+          <div class="flex items-center justify-between mt-2 pt-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-900">₹150</span>
+            <button 
+              onclick="connectWhatsAppProduct('Boogly Chair', '₹1500')"
+              class="bg-brandWhatsApp hover:bg-brandWhatsAppHover active:scale-95 text-white text-[11px] font-medium px-2.5 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition">
+              <i data-lucide="message-circle" class="w-3 h-3 fill-current"></i>
+              <span>WhatsApp</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-item bg-white rounded-2xl p-3 border border-slate-200/70 shadow-sm flex flex-col justify-between relative group" data-category="Tables" data-title="Nordic Minimal Table">
+          <button onclick="toggleWishlist(this, event)" class="wishlist-btn absolute top-3 right-3 w-7 h-7 rounded-full bg-white/95 border border-slate-100 flex items-center justify-center text-slate-300 shadow-sm z-10 transition active:scale-90" aria-label="Save to Wishlist">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          </button>
+          
+          <div onclick="openDetailModal('Nordic Minimal Table', '₹2100.00', 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=700&q=80', 'Tables')" class="cursor-pointer">
+            <div class="h-28 w-full flex items-center justify-center overflow-hidden rounded-xl bg-slate-50 mb-2">
+              <img 
+                src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=700&q=80" 
+                alt="Nordic Minimal Table" 
+                class="h-24 object-contain group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='https://placehold.co/300x300/f0f4f4/333333?text=Nordic+Table'"
+              >
+            </div>
+            <h4 class="text-xs font-semibold text-slate-800 line-clamp-1">Nordic Table</h4>
+          </div>
+
+          <div class="flex items-center justify-between mt-2 pt-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-900">₹2100</span>
+            <button 
+              onclick="connectWhatsAppProduct('Nordic Minimal Table', '₹2100')"
+              class="bg-brandWhatsApp hover:bg-brandWhatsAppHover active:scale-95 text-white text-[11px] font-medium px-2.5 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition">
+              <i data-lucide="message-circle" class="w-3 h-3 fill-current"></i>
+              <span>WhatsApp</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SECTION 3: PRODUCT DETAIL MODAL                           -->
+    <!-- ========================================================= -->
+    <div id="detailModal" class="fixed inset-0 z-50 bg-brandDark text-white hidden flex-col justify-between overflow-y-auto no-scrollbar p-6">
+      
+      <div class="flex items-center justify-between pt-2">
+        <button 
+          onclick="closeDetailModal()" 
+          class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center active:scale-95 transition"
+          aria-label="Back to Catalog">
+          <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        </button>
+
+        <span class="text-xs uppercase tracking-widest text-teal-300/80 font-semibold" id="modalCategoryTag">Chair Details</span>
+
+        <button 
+          onclick="shareProduct()" 
+          class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center active:scale-95 transition"
+          aria-label="Share">
+          <i data-lucide="share-2" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <div class="mt-6 flex items-start justify-between">
+        <div>
+          <span class="inline-block bg-[#0f7d88] text-teal-100 text-[10px] font-bold px-3 py-1 rounded-full tracking-wider mb-2">
+            NEW ARRIVAL
+          </span>
+          <h2 id="modalTitle" class="text-2xl font-bold font-display tracking-tight text-white">
+            Boogly Chair
+          </h2>
+        </div>
+        <div class="text-right">
+          <span id="modalPrice" class="text-2xl font-bold font-display text-teal-300 tracking-tight">
+            ₹1500.00
+          </span>
+        </div>
+      </div>
+
+      <div class="relative my-4 flex flex-col items-center justify-center min-h-[300px]">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-2.5 z-20 bg-black/40 p-2 rounded-full backdrop-blur-md border border-white/10">
+          <button onclick="changeColorVariant('Grey', '#2f353b', this)" class="color-btn w-6 h-6 rounded-full bg-[#2f353b] ring-2 ring-white ring-offset-2 ring-offset-brandDark transition" title="Charcoal Grey"></button>
+          <button onclick="changeColorVariant('Mustard Yellow', '#d6a429', this)" class="color-btn w-6 h-6 rounded-full bg-[#d6a429] hover:scale-110 transition" title="Mustard Yellow"></button>
+          <button onclick="changeColorVariant('Olive Green', '#4e6347', this)" class="color-btn w-6 h-6 rounded-full bg-[#4e6347] hover:scale-110 transition" title="Olive Green"></button>
+          <button onclick="changeColorVariant('Pure White', '#f1f3f4', this)" class="color-btn w-6 h-6 rounded-full bg-[#f1f3f4] hover:scale-110 transition" title="Pure White"></button>
+          <button onclick="changeColorVariant('Light Cyan', '#75c6d3', this)" class="color-btn w-6 h-6 rounded-full bg-[#75c6d3] hover:scale-110 transition" title="Light Cyan"></button>
+        </div>
+
+        <div class="absolute bottom-5 w-60 h-60 spin-ring pointer-events-none"></div>
+
+        <div class="absolute bottom-0 z-20 flex items-center justify-center">
+          <div class="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-[10px] text-teal-200 flex items-center gap-1.5">
+            <i data-lucide="rotate-cw" class="w-3 h-3 text-teal-400"></i>
+            <span>360° Studio View</span>
+          </div>
+        </div>
+
+        <div class="relative z-10 w-full flex items-center justify-center">
+          <img 
+            id="modalProductImg" 
+            src="https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80" 
+            alt="Boogly Chair with Pillow" 
+            class="w-64 h-72 object-contain filter drop-shadow-2xl transition-all duration-300"
+            onerror="this.src='https://placehold.co/600x600/072023/ffffff?text=Product+Image'"
+          />
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-2.5 my-2">
+        <button onclick="changeThumbnail(0, this)" class="modal-thumb w-12 h-12 p-1 rounded-xl bg-neutral-900 border-2 border-teal-400 transition">
+          <img src="https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-contain rounded-lg" alt="Angle 1">
+        </button>
+        <button onclick="changeThumbnail(1, this)" class="modal-thumb w-12 h-12 p-1 rounded-xl bg-neutral-900/60 border border-white/10 opacity-70 hover:opacity-100 transition">
+          <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-contain rounded-lg" alt="Angle 2">
+        </button>
+        <button onclick="changeThumbnail(2, this)" class="modal-thumb w-12 h-12 p-1 rounded-xl bg-neutral-900/60 border border-white/10 opacity-70 hover:opacity-100 transition">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-contain rounded-lg" alt="Angle 3">
+        </button>
+        <button onclick="changeThumbnail(3, this)" class="modal-thumb w-12 h-12 p-1 rounded-xl bg-neutral-900/60 border border-white/10 opacity-70 hover:opacity-100 transition">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-contain rounded-lg" alt="Angle 4">
+        </button>
+      </div>
+
+      <div class="text-center text-xs text-teal-200/80 mb-2">
+        Selected Finish: <strong id="selectedColorLabel" class="text-white">Charcoal Grey</strong>
+      </div>
+
+      <div class="flex items-center gap-3 pt-2">
+        <button onclick="toggleModalHeart(this)" class="w-14 h-14 rounded-2xl bg-white/10 hover:bg-white/20 flex items-center justify-center shadow-lg active:scale-90 transition shrink-0" aria-label="Save to Wishlist">
+          <i data-lucide="heart" class="w-6 h-6 text-red-500 fill-red-500"></i>
+        </button>
+
+        <button 
+          onclick="connectWhatsAppCurrentModal()" 
+          class="flex-1 bg-brandWhatsApp hover:bg-brandWhatsAppHover active:scale-[0.98] text-white font-bold py-4 px-6 rounded-2xl text-center text-sm shadow-xl shadow-brandWhatsApp/20 flex items-center justify-center gap-2.5 transition">
+          <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+          <span>Chat on WhatsApp</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed top-5 left-4 right-4 max-w-[440px] mx-auto z-[100] pointer-events-none hidden transition-all duration-300">
+      <div class="bg-brandDark/95 backdrop-blur-md text-white border border-teal-500/40 rounded-2xl p-3.5 px-4 shadow-2xl flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white shrink-0">
+          <i data-lucide="check" class="w-4 h-4"></i>
+        </div>
+        <div class="flex-1 text-xs">
+          <p class="font-bold text-white text-xs" id="toastTitle">Message</p>
+          <p class="text-teal-200 text-[11px]" id="toastMessage">Done.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const WHATSAPP_PHONE = "916223295042";
+    let currentSelectedColor = "Charcoal Grey";
+
+    // 8 Featured Banner Items Data for Catalog Page
+    const catalogBannerSlides = [
+      {
+        tag: "FEATURED",
+        title: "Tamas Living",
+        desc: "Easily book your chair anytime, anywhere. Quick, simple, and hassle-free inquiries.",
+        img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        tag: "PREMIUM",
+        title: "Aalto Velvet Lounge",
+        desc: "Handcrafted natural oak framing with high resilience foam cushioning.",
+        img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        tag: "NEW ARRIVAL",
+        title: "Balcony Serenity",
+        desc: "Weather-resistant fabric designed for modern outdoor and balcony spaces.",
+        img: "https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        tag: "BESTSELLER",
+        title: "Nordic Minimalist Desk",
+        desc: "Sleek matte finished solid wood table suitable for modern home workstations.",
+        img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        tag: "LUXURY",
+        title: "Velvet Emerald Couch",
+        desc: "Deep tufted soft velvet comfort that turns your living area into royalty.",
+        img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        tag: "BEDROOM",
+        title: "Royal King Suede Bed",
+        desc: "Ergonomic headboard support and noiseless acoustic frame structure.",
+        img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        tag: "MINIMALIST",
+        title: "Studio Teak Accent",
+        desc: "Compact, durable natural teakwood design made for compact cozy corners.",
+        img: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        tag: "MODERN",
+        title: "Boogly Cloud Seat",
+        desc: "Feather-soft dual layered seating with stain-resistant microfiber casing.",
+        img: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
+
+    let currentBannerIndex = 0;
+    let bannerInterval = null;
+
+    // Render Banner Slides & Dots
+    function initCatalogBanner() {
+      const container = document.getElementById('catalogBannerSlider');
+      const dotsContainer = document.getElementById('bannerDots');
+      container.innerHTML = '';
+      dotsContainer.innerHTML = '';
+
+      catalogBannerSlides.forEach((slide, idx) => {
+        const slideEl = document.createElement('div');
+        slideEl.className = `banner-slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`;
+        slideEl.innerHTML = `
+          <img src="${slide.img}" alt="${slide.title}" class="absolute inset-0 w-full h-full object-cover opacity-80" onerror="this.src='https://placehold.co/600x300/1e293b/ffffff?text=Tamas+Living'">
+          <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/50 to-transparent"></div>
+          <div class="relative z-10 p-4 h-full flex flex-col justify-center max-w-[270px] text-white">
+            <span class="inline-block text-[10px] uppercase font-bold tracking-widest text-teal-300 mb-1">${slide.tag}</span>
+            <h2 class="text-lg font-bold tracking-tight font-display text-white leading-tight">${slide.title}</h2>
+            <p class="text-[11px] text-slate-200 mt-1 leading-snug font-normal line-clamp-2">${slide.desc}</p>
+          </div>
+        `;
+        container.appendChild(slideEl);
+
+        const dot = document.createElement('div');
+        dot.className = `w-1.5 h-1.5 rounded-full transition-all duration-300 ${idx === 0 ? 'w-3 bg-teal-400' : 'bg-white/40'}`;
+        dotsContainer.appendChild(dot);
+      });
+
+      startBannerAutoplay();
+    }
+
+    function switchBannerSlide(nextIndex) {
+      const slides = document.querySelectorAll('.banner-slide');
+      const dots = document.getElementById('bannerDots').children;
+      if (!slides.length) return;
+
+      slides[currentBannerIndex].classList.remove('opacity-100', 'z-10');
+      slides[currentBannerIndex].classList.add('opacity-0', 'z-0');
+      dots[currentBannerIndex].className = 'w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300';
+
+      currentBannerIndex = nextIndex % catalogBannerSlides.length;
+
+      slides[currentBannerIndex].classList.remove('opacity-0', 'z-0');
+      slides[currentBannerIndex].classList.add('opacity-100', 'z-10');
+      dots[currentBannerIndex].className = 'w-3 h-1.5 rounded-full bg-teal-400 transition-all duration-300';
+    }
+
+    function startBannerAutoplay() {
+      if (bannerInterval) clearInterval(bannerInterval);
+      bannerInterval = setInterval(() => {
+        switchBannerSlide(currentBannerIndex + 1);
+      }, 3500);
+    }
+
+    // Navigation Screens
+    function goToCatalog() {
+      const hero = document.getElementById('heroScreen');
+      const catalog = document.getElementById('catalogScreen');
+      
+      hero.classList.remove('translate-x-0');
+      hero.classList.add('-translate-x-full');
+      
+      catalog.classList.remove('translate-x-full');
+      catalog.classList.add('translate-x-0');
+      
+      catalog.scrollTop = 0;
+    }
+
+    function goToHero() {
+      const hero = document.getElementById('heroScreen');
+      const catalog = document.getElementById('catalogScreen');
+      
+      catalog.classList.remove('translate-x-0');
+      catalog.classList.add('translate-x-full');
+      
+      hero.classList.remove('-translate-x-full');
+      hero.classList.add('translate-x-0');
+    }
+
+    const thumbnailPool = [
+      'https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80'
+    ];
+
+    const colorVariants = {
+      'Grey': 'https://images.unsplash.com/photo-1580481077194-43cb4d142ab1?auto=format&fit=crop&w=800&q=80',
+      'Mustard Yellow': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
+      'Olive Green': 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=80',
+      'Pure White': 'https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&w=800&q=80',
+      'Light Cyan': 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80'
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initCatalogBanner();
+    });
+
+    function connectWhatsAppProduct(productName, price, color = null) {
+      let message = `Namaste Tamas Living! Mujhe ${productName} (${price}) khareedne ke bare me jankari chahiye.`;
+      if (color) {
+        message += ` Selected Finish: ${color}. Kripya availability aur delivery details batayein.`;
+      }
+      const encodedMsg = encodeURIComponent(message);
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMsg}`;
+      window.open(url, '_blank');
+    }
+
+    function connectWhatsAppCurrentModal() {
+      const title = document.getElementById('modalTitle').textContent.trim();
+      const price = document.getElementById('modalPrice').textContent.trim();
+      connectWhatsAppProduct(title, price, currentSelectedColor);
+    }
+
+    function openDetailModal(title, price, imgUrl, category = "Furniture") {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalPrice').textContent = price;
+      document.getElementById('modalCategoryTag').textContent = `${category} Details`;
+      if (imgUrl) {
+        document.getElementById('modalProductImg').src = imgUrl;
+      }
+      
+      const modal = document.getElementById('detailModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeDetailModal() {
+      const modal = document.getElementById('detailModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function changeColorVariant(colorName, hex, btnElement) {
+      currentSelectedColor = colorName;
+      document.getElementById('selectedColorLabel').textContent = colorName;
+
+      document.querySelectorAll('.color-btn').forEach(b => {
+        b.classList.remove('ring-2', 'ring-white', 'ring-offset-2', 'ring-offset-brandDark');
+      });
+      btnElement.classList.add('ring-2', 'ring-white', 'ring-offset-2', 'ring-offset-brandDark');
+
+      const img = document.getElementById('modalProductImg');
+      if (colorVariants[colorName]) {
+        img.style.opacity = '0.3';
+        setTimeout(() => {
+          img.src = colorVariants[colorName];
+          img.style.opacity = '1';
+        }, 120);
+      }
+    }
+
+    function changeThumbnail(index, btnElement) {
+      document.querySelectorAll('.modal-thumb').forEach(b => {
+        b.classList.remove('border-teal-400', 'border-2');
+        b.classList.add('opacity-70', 'border-white/10');
+      });
+      btnElement.classList.add('border-teal-400', 'border-2');
+      btnElement.classList.remove('opacity-70');
+
+      const img = document.getElementById('modalProductImg');
+      img.style.opacity = '0.3';
+      setTimeout(() => {
+        img.src = thumbnailPool[index];
+        img.style.opacity = '1';
+      }, 120);
+    }
+
+    function toggleWishlist(btn, event) {
+      if (event) event.stopPropagation();
+      const isFavorited = btn.classList.contains('text-red-500');
+
+      if (isFavorited) {
+        btn.classList.remove('text-red-500');
+        btn.classList.add('text-slate-300');
+        btn.innerHTML = '<i data-lucide="heart" class="w-3.5 h-3.5"></i>';
+      } else {
+        btn.classList.remove('text-slate-300');
+        btn.classList.add('text-red-500');
+        btn.innerHTML = '<i data-lucide="heart" class="w-3.5 h-3.5 fill-red-500 stroke-red-500"></i>';
+        showQuickAlert('Wishlist', 'Item aapki wishlist me add ho gaya hai.');
+      }
+      lucide.createIcons();
+    }
+
+    function toggleModalHeart(btn) {
+      const isRed = btn.querySelector('svg').classList.contains('text-red-500');
+      if (isRed) {
+        btn.innerHTML = '<i data-lucide="heart" class="w-6 h-6 text-white/50"></i>';
+      } else {
+        btn.innerHTML = '<i data-lucide="heart" class="w-6 h-6 text-red-500 fill-red-500"></i>';
+        showQuickAlert('Wishlist', 'Product wishlist me save ho gaya.');
+      }
+      lucide.createIcons();
+    }
+
+    function filterCategory(categoryName, btnElement) {
+      document.querySelectorAll('.category-pill').forEach(b => {
+        b.classList.remove('bg-brandDark', 'text-white');
+        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+      });
+      btnElement.classList.add('bg-brandDark', 'text-white');
+      btnElement.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+
+      const items = document.querySelectorAll('.product-item');
+      items.forEach(item => {
+        if (categoryName === 'All' || item.dataset.category === categoryName) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function handleSearch(query) {
+      const term = query.toLowerCase().trim();
+      const items = document.querySelectorAll('.product-item');
+      items.forEach(item => {
+        const title = (item.dataset.title || '').toLowerCase();
+        if (title.includes(term)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function shareProduct() {
+      const shareData = {
+        title: 'Tamas Living Furniture',
+        text: 'Tamas Living ka modern luxury furniture collection dekhein:',
+        url: window.location.href
+      };
+      if (navigator.share) {
+        navigator.share(shareData).catch(() => {});
+      } else {
+        document.execCommand('copy');
+        showQuickAlert('Link Copied', 'Product link clipboard me copy ho gaya.');
+      }
+    }
+
+    function showQuickAlert(title, message) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = message;
+      
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2500);
+    }
+  </script>
+</body>
+</html>
